@@ -1,8 +1,12 @@
 package com.example.sign;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +22,23 @@ public class mainpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mainpage);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.maintemplist), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+
+        Toolbar toolbar = findViewById(R.id.toolbarmain);
+        setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Main Page");
+        }
+
+
         ArrayList<itemlist> MainList = new ArrayList<>();
 
         MainList.add(new itemlist("Temperature",R.drawable.temperature));
@@ -45,5 +65,32 @@ public class mainpage extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_profile) {
+            Intent profileIntent = new Intent(this, profile.class);
+            profileIntent.putExtra("username", getIntent().getStringExtra("username"));
+            startActivity(profileIntent);
+            return true;
+        } else if (id == R.id.action_activity_log) {
+            Intent activityLogIntent = new Intent(this, ActivityLog.class);
+            startActivity(activityLogIntent);
+            return true;
+        } else if (id == R.id.action_logout) {
+            finish();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }

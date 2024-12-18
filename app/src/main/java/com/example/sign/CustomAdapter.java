@@ -1,20 +1,18 @@
 package com.example.sign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class CustomAdapter extends BaseAdapter {
 
@@ -56,8 +54,8 @@ public class CustomAdapter extends BaseAdapter {
             convertView.setTag(current);
         }
 
-        ImageView img = convertView.findViewById(R.id.image);
-        TextView txt = convertView.findViewById(R.id.text);
+        ImageView img = convertView.findViewById(R.id.imagelist);
+        TextView txt = convertView.findViewById(R.id.textlist);
 
         img.setImageResource(current.getImgID());
         txt.setText(current.getName());
@@ -65,7 +63,23 @@ public class CustomAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // do something
+                Intent intent;
+                if(current.getName().equals("Temperature")){
+                    intent = new Intent(mContext, Temperature.class);
+                    mContext.startActivity(intent);
+                }else if(current.getName().equals("Ultrasonic Sensor")){
+                    intent = new Intent(mContext, Ultrasonic.class);
+                    mContext.startActivity(intent);
+                }else if(current.getName().equals("Light")){
+                    intent = new Intent(mContext, Light.class);
+                    mContext.startActivity(intent);
+                }else if(current.getName().equals("Display LCD")){
+                    intent = new Intent(mContext, LCD.class);
+                    mContext.startActivity(intent);
+                }else{
+                    intent = new Intent(mContext, Smoke.class);
+                    mContext.startActivity(intent);
+                }
             }
         });
 
