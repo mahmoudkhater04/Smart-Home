@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "602463791690",
-    "project_id": "smarthome-4d495",
-    "storage_bucket": "smarthome-4d495.firebasestorage.app"
+    "project_number": "981095427122",
+    "project_id": "finalhomess",
+    "storage_bucket": "finalhomess.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:602463791690:android:5b2b9cfb2806a2cedb54b3",
+        "mobilesdk_app_id": "1:981095427122:android:f58f4cace9007aaebca02b",
         "android_client_info": {
-          "package_name": "com.example.sign"
+          "package_name": "com.example.finalhome"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD8e0m2Y-Bpwyoy6qLtrYvOGgynOr65e0g"
+          "current_key": "AIzaSyAgd3JzYitpvNQdlrrU7MVSm_8oML-GCuw"
         }
       ],
       "services": {

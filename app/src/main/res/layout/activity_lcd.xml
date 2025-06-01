@@ -9,13 +9,16 @@
 
     <TextView
         android:id="@+id/textViewlcd"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
+        android:layout_width="303dp"
+        android:layout_height="46dp"
         android:layout_marginStart="155dp"
         android:layout_marginTop="57dp"
         android:layout_marginEnd="154dp"
         android:layout_marginBottom="384dp"
-        android:text="LCD"
+        android:text="Display LCD"
+        android:gravity="center"
+        android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonlcd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,8 +36,40 @@
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/TextLCD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="278dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/buttonlcd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewlcd" />
+
+    <Button
+        android:id="@+id/displayButton"
+        android:layout_width="241dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="41dp"
+        android:text="Display"
+        app:layout_constraintBottom_toTopOf="@+id/buttonlcd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextLCD" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

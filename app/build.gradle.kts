@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.sign"
-    compileSdk = 35
+    namespace = "com.example.finalhome"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.sign"
+        applicationId = "com.example.finalhome"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -39,9 +39,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
-    implementation(libs.media3.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-//    implementation(libs.firebase.storage)
 }

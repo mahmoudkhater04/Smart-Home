@@ -9,18 +9,22 @@
 
     <TextView
         android:id="@+id/textViewLight"
-        android:layout_width="103dp"
-        android:layout_height="50dp"
+        android:layout_width="211dp"
+        android:layout_height="54dp"
         android:layout_marginStart="155dp"
         android:layout_marginTop="58dp"
         android:layout_marginEnd="154dp"
         android:layout_marginBottom="384dp"
+        android:gravity="center"
         android:text="Light"
+        android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
 
     <Button
         android:id="@+id/buttonLight"
@@ -36,5 +40,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/OnOffButton"
+        android:layout_width="241dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="41dp"
+        android:text="On/Off"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textlight"
+        android:layout_width="264dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="89dp"
+        android:text="off"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/OnOffButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

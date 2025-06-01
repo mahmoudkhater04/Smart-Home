@@ -1,4 +1,4 @@
-package com.example.sign;
+package com.example.finalhome;
 
 import android.content.Context;
 import android.content.Intent;

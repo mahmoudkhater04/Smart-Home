@@ -1,8 +1,9 @@
-package com.example.sign;
+package com.example.finalhome;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Button loginbutton;
     private DatabaseHelper databaseHelper;
 
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -59,12 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button signup = findViewById(R.id.singupbtn);
         signup.setOnClickListener(v -> {
-            Intent t = new Intent(MainActivity.this, com.example.sign.signup.class);
+            Log.d("DatabaseHelper", "signup activity here to start");
+            Intent t = new Intent(MainActivity.this, signup.class);
             startActivity(t);
         });
         Button forget = findViewById(R.id.forgetPassword);
         forget.setOnClickListener(v -> {
-            Intent t = new Intent(MainActivity.this, com.example.sign.ForgetPassword.class);
+            Intent t = new Intent(MainActivity.this, ForgetPassword.class);
             startActivity(t);
         });
     }

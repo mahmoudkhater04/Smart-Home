@@ -1,4 +1,4 @@
-package com.example.sign;
+package com.example.finalhome;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -187,5 +187,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
             Log.d(TAG, "Database connection closed after isEmailExists for " + email);
         }
+    }
+    public void updatePassword(String username, String newPassword){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PASSWORD, newPassword);
+        int rowsAffected = db.update(TABLE_USERS, values, COLUMN_USERNAME + "=?", new String[]{username});
+        db.close();
     }
 }

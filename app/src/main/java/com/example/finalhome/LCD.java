@@ -1,13 +1,18 @@
-package com.example.sign;
+package com.example.finalhome;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LCD extends AppCompatActivity {
 
@@ -23,5 +28,14 @@ public class LCD extends AppCompatActivity {
         });
         Button back = findViewById(R.id.buttonlcd);
         back.setOnClickListener(v -> finish());
+        Button display = findViewById(R.id.displayButton);
+        display.setOnClickListener(v -> {
+            // Write to fairbase
+            EditText editText = findViewById(R.id.TextLCD);
+            String value = editText.getText().toString();
+            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("/LCD");
+            Toast.makeText(this, "here " + value, Toast.LENGTH_SHORT).show();
+            myRef.setValue(value);
+        });
     }
 }

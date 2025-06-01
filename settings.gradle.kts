@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "sign"
+rootProject.name = "finalhome"
 include(":app")
  
